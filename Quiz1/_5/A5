@@ -1,0 +1,7 @@
+Since we are provided with embedded systems, "which is a microprocessor or microcontroller bassed system of hardware and software designed to perform dedicated functions within a larger mechanical or electrical system." (https://www.omnisci.com/technical-glossary/embedded-systems)
+
+According to me we should use the real mode (16-bit mode) for running your program, because the embedded system is a dedicated system for small programs like simple arithmetic.
+
+But if we use 64 bit mode it will use the protected mode which will then use some concepts like paging and virtual memory which I am not very clear about, but I know from an abstract level that it will take time leading to an overhead so I will use real mode.
+
+

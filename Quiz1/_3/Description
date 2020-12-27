@@ -1,0 +1,9 @@
+snippet.c:
+	This file contains the modified code to store 64-bit integers using a pointer to type long int. 
+	I have declared a long int pointer and initialised it by typecasting the char array, so that it could get the same memory block as owned by x.
+	Then I run a loop to divide it into 8 chunks of memory of 64 bits each so as to allocate 8 bytes of char array to a single long int.
+	
+snippet1.c:
+	This is the modified code to store 32-bit integers using a pointer to type int.
+	I have declared a pointer and initialised it by type casting the provided char array.
+	Then I run a loop 16 times so that the memory can be divided into 16 chunks of 32 bits each by allocating each chunk the memory took by 4 bytes of char array.

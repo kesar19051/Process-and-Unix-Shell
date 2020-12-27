@@ -1,0 +1,22 @@
+Description of C Program:
+	My C program contains the standard header file and inttype header file. 
+	It then contains a declaration of checkGreater function because I need to call it from C as demanded by the question. 
+	In the main function there is only one line which calls the checkGreater function with parameters as given in the program.
+	
+Description of ASM Program:
+	In ASM Program the entry point defined is _start label. 
+	In _start label I have put in registers the parameters and from there I call the checkGreater function.
+	In the checkGreater function I check if the first parameter is greater than the second using the cmp instruction and use jg flag.
+	If my conditional statement ends in 'if greater than' it jumps to the next label otherwise continues the execution and then exits the program.
+
+Do they work together?
+	In the makefile I have converted my c file and asm file in object codes using two targets C and ASM respectively.
+	When they both give their respective object codes I try to link them together in an executable file called combined.
+	However, it does not get linked because there assembler gets confused as to use which entry point as ENTRY directive.
+	So we have directives in the assembly language which are the instructions used by the assembler to help automate the process.
+	ENTRY directive is made in such a way that it finds one entry point and have some priorities set. 
+	For example, I don't know the exact criteria but if we don't specify the entry point, it will search for itself, take one entry point and then begin its work.
+	So in my code, what happens is I have main in my C program and then I provide a _start label too in the C program due to which a confusion is created as to which entry point to use.
+	If I had made checkGreater global in the asm file, then it would have worked because in that case when the c file is converted to its assembly code there will be _start label from which the program can start because assembler will then get only one _start label even if _checkGreater is global so there will be no confusion for the assembler and then it will work without any error.
+	Hence it does not work.
+	

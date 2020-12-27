@@ -1,0 +1,15 @@
+Command that I used to compile the code is gcc -S snippet.c
+
+Here gcc is the compiler name, S is the flag to see the output at compilation step and snippet.c is the file name of the code.
+
+Warnings:
+The warnings that I am getting are:
+
+1. In the first line of the code: return type defualts to 'int'
+	This warning is because if until explicitly defined, the return type of the function is assumed to be int.
+	
+2. The second warning is from third line: implicit declaration of function ‘round’
+	This is due to the reason that we are using the round function when we have not actually asked our compiler to use, the compiler being intelligent tells that it can lead to error at some point of execution.
+	
+3. incompatible implicit declaration of built-in function ‘round’
+	This is again due to the fact that the header file for the functions like math which is math.h is not being used.

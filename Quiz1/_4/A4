@@ -1,0 +1,9 @@
+C Program:
+	In my C program (P4_1.c) I have declared the function long_add in such a way that it returns 32 bit integer and expects 32 bit integers as the parameters.
+	In P4_2.c, I have declared the function extended_add in such a way that it returns 64 bit integer and expects 64 bit integers as the parameters.
+	
+P4_1.asm:
+	In this program I have used 32 bit registers like ebp, esp, etc and used them according to the C calling conventions. 
+	
+Do I need a change?
+	Yes, I need a change because my function declaration is of 32 bit and I have compiled it in gcc using 32 bit by using -m32 flag. In extended_add function, I have declared the return type to be 64 bits and for that case I have created another C file P4_2.c in which the declaration of the function of the function is such that the return type is 64 bits integer and the parameters too are 64 bits intgers.
