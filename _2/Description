@@ -1,0 +1,102 @@
+cd:
+	The options it can take:
+		It can handle movement to any valid path with any option of -P and -L options but it will not be reflected on the console. Rather it will print "done" for each case. This happens because the program changes the working directory of a process and not the working directory of the shell as it follows the exec mechanism of fork.
+		
+	The bugs:
+		Since it does not actually change the directory due to chdir used one won't get any bugs rather a "done" message will be printed everytime.
+		However, if something related to symbolic links and the tags are to be used then it will not work properly.
+		
+echo:
+	The options it can take:
+		echo -E (string)
+		echo -n (string)
+		
+		I assume that the string will be give in the inverted commas.
+		If using normal echo without inverted commas the string can be given and if with inverted commas the command is given then it will print the commas too.
+		
+	Testcases:
+		echo -E "iii  \bnn"
+		echo -n "ll"
+		
+history:
+	The options it can take:
+		One is normal history that will show the contents that the history have.
+		The other option it can take is -c option that will remove the contents from the history file.
+		
+	The bugs that I defend against are:
+		It is possible that after calling the history file is already written as I am opening it with already written file.
+		
+pwd: 
+	help option is implemented 
+	and any other tag will also be accepted as the input but it would not work as the implementation is simple, i.e, for any pwd command
+	
+	Do give a space after pwd to make it run.
+	
+exit:
+	help option is implemented
+	and normal exit command is implemented.
+	However, one needs to give a space after writing the command.
+	
+ls:
+	In this I have handled -r and -1 options.
+	Test cases are 
+		ls -r
+		ls -1
+		
+	However, if only ls is called with a space then -1 option will be called.
+	
+	Bugs:
+		The output will be quite different for both because the alphasort I 		have used sorts the file quite differntly.
+		Also for the -r option the outputs are only single spaced rather than tab spaced.
+		
+		For the implementation of ls I have referred to some internet sites. It is not completely mine.
+		
+cat:
+	Options -E and -t.
+	One needs to give space after giving the options and enter the filename when prompted to again with a space.
+	Testcases:
+		cat -E 
+		file name: ls.c 
+		cat -t
+		file name: ls.c
+	Bugs: 
+		If only cat with a space is called then -t option will be called by default.
+		
+date:
+	Options: -u and -u --date="yesterday"
+	
+	The bugs that I defend:
+		The output time is in 24 hrs format rather than the 12 hrs.
+		It will also work if the second test case if filled only till --.
+	Test cases:
+		date -u
+		date -u --date="yesterday"
+		
+rm:
+	options: -f and -i
+	Even if -i is not mentioned by default it will be followed.
+	
+	Test cases:
+		rm -f
+		file name: ls
+		rm -i
+		file name: ls1
+		
+	If it wants to remove the file from some other directory it can not happen.
+	
+mkdir:
+	options -v and -m
+		
+	In -m only one mode can be created that is 0777.
+	 mkdir -v
+	 filename: 
+	 	kk
+	 mkdir -m
+	 	filename:
+	 	 jj
+	
+	
+		
+	
+	
+

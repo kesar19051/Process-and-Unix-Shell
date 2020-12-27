@@ -1,0 +1,24 @@
+My program runs as follows:
+
+When the program starts fork is called and one parent process and child process are created. Now, it checks the id, if the id is 0, this implies that it is the child process and we need to calculate the section B result. It opens the file, reads it completely and prints only those details whose section is B. It then exits from the child process, now parent process is executed and it also works same as the child process but this time it checks for section A. Could not implement it correctly using read and write system calls.
+
+The fork():
+	this system call returns negative value whenever the child process is not created. zero is for child process and positive for parent process.
+	
+waitpid(id, &status, 0):
+	It suspends the execution of the current process until the child process changes its state. In my program, it changes the state when it exits by system call exit(1). The first argument is the id of the child process. The status is for the process which is waiting. I could not understand the meaning of the third parameter.
+	
+exit(int i)
+	This is the system call to terminate the calling process. The file descriptors are closed.
+	Though I could not understand it completely, the parameter is the status value returned to the parent process, quoting tutorialspoint.
+	
+	
+read(int fd, void *buf, size_t count):
+ This system call accepts three parameters, the file descriptor, the buffer to which the read value needs to be stored and the size of the bytes need to be read.
+ It returns the number of bytes read and zero indicate end of file.
+ 
+ write(int fd, const void *buf, size_t count):
+ This system call also accepts three parameters same as the read system call, it writes up to the third parameter bytes from the buffer to the file referred to by the file descriptor fd.
+ It returns the number of bytes written and -1 on error.
+ 
+ Referred manpages for read and write system call description.
